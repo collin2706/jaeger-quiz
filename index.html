@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jägerprüfung Online-Trainer</title>
+    <meta
+      name="description"
+      content="Lerne für die Jägerprüfung mit 3.600 Fragen, Filterung nach Themen und sofortigem Feedback."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container header-content">
+        <div>
+          <p class="eyebrow">Jägerprüfung Lernportal</p>
+          <h1>🦌 Jägerprüfung Online-Trainer</h1>
+        </div>
+        <div class="header-badge">3.600 Fragen</div>
+      </div>
+    </header>
+
+    <main class="container app-shell">
+      <section class="panel controls-panel">
+        <div class="control-group">
+          <label for="categoryFilter">Themengebiet</label>
+          <select id="categoryFilter"></select>
+        </div>
+
+        <div class="control-group compact">
+          <span class="label">Fragenpool</span>
+          <strong id="questionPoolLabel">3.600</strong>
+        </div>
+
+        <button id="startBtn" class="primary-btn">Lernen starten</button>
+      </section>
+
+      <section id="statsPanel" class="stats-grid">
+        <article class="stat-card">
+          <span class="stat-label">Gesamt</span>
+          <strong id="totalQuestionsStat">0</strong>
+        </article>
+        <article class="stat-card">
+          <span class="stat-label">Aktuell</span>
+          <strong id="currentQuestionStat">0 / 0</strong>
+        </article>
+        <article class="stat-card">
+          <span class="stat-label">Richtig</span>
+          <strong id="correctCountStat">0</strong>
+        </article>
+      </section>
+
+      <section id="quizCard" class="panel quiz-card hidden">
+        <div class="quiz-header">
+          <span id="progressBadge" class="progress-badge">Frage 1/1</span>
+          <span id="categoryBadge" class="category-badge">Thema</span>
+        </div>
+
+        <h2 id="questionText">Frage</h2>
+
+        <div id="optionsContainer" class="options-container"></div>
+
+        <div id="explanationBox" class="explanation-box hidden">
+          <h3>Erklärung</h3>
+          <p id="explanationText"></p>
+        </div>
+
+        <div class="quiz-actions">
+          <button id="prevBtn" class="secondary-btn">Zurück</button>
+          <button id="nextBtn" class="primary-btn">Nächste Frage</button>
+        </div>
+      </section>
+
+      <section id="emptyState" class="panel empty-state">
+        <h2>Bereit zum Lernen?</h2>
+        <p>
+          Wähle ein Themengebiet aus und starte mit einem Quizdurchlauf.
+        </p>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
